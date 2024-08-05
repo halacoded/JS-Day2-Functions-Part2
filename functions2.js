@@ -9,12 +9,13 @@
  */
 function isOdd(n) {
   if (n % 2 == 0) {
-    console.log("False");
+    return false;
   } else {
-    console.log("True");
+    return true;
   }
 }
-isOdd(2);
+
+console.log(isOdd(2));
 /**
  * oddsSmallerThan(n):
  * - receives a number n
@@ -27,14 +28,13 @@ isOdd(2);
 function oddsSmallerThan(n) {
   let count = 0;
   for (i = 0; i < n; i++) {
-    if (i % 2 != 0) {
+    if (isOdd(i)) {
       count++;
     }
   }
-  console.log(count);
+  return count;
 }
-
-oddsSmallerThan(15);
+console.log(oddsSmallerThan(15));
 
 /**
  * squareOrDouble(n):
@@ -47,10 +47,11 @@ oddsSmallerThan(15);
  * squareOrDouble(9) -> 81
  */
 function squareOrDouble(n) {
-  if (n % 2 == 0) {
-    console.log(n * 2);
+  if (isOdd(n) != true) {
+    return n * 2;
   } else {
-    console.log(n * n);
+    return n * n;
   }
 }
-squareOrDouble(16);
+
+console.log(squareOrDouble(9));
